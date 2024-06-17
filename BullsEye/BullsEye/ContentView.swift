@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var alertIsVisible: Bool = false
     var body: some View {
         VStack {
             Text("🎯🎯🎯\nPUT THE BULL'S EYE AS CLOSE AS YOU CAN")
@@ -17,15 +18,29 @@ struct ContentView: View {
                 .font(.footnote)
                 .kerning(3.0)
             Text("89")
+                .kerning(-1.0)
+                .font(.largeTitle)
+                .fontWeight(.black)
             HStack {
                 Text("1")
+                    .bold()
                 Slider(value: .constant(50), in: 1.0...100.0)
                 Text("100")
+                    .bold()
             }
-            Button("STOP") {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+            Button("HIT ME") {
+                alertIsVisible = true
             }
-
+            .alert("Button Pressed",
+                   isPresented: $alertIsVisible,
+                   actions: {
+                Button("Cancel"){
+                    
+                }
+            },
+                   message: {
+                Text("This is my first alert")
+            })
         }
     }
 }
