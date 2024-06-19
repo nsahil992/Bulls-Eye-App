@@ -5,6 +5,8 @@
 //  Created by Sahil on 16/06/24.
 //
 
+
+// For dark mode, add a color to your asset.
 import SwiftUI
 
 struct ContentView: View {
