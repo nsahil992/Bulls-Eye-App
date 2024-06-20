@@ -18,13 +18,7 @@ struct ContentView: View {
             Color("BackgroundColor")
                 .ignoresSafeArea()
             VStack {
-                InstructionText(text: "🎯🎯🎯\nPut the bull's eye as close as you can")
-                    .padding(.horizontal, 30)
-                Text(String(game.target))
-                    .kerning(-1.0)
-                    .font(.largeTitle)
-                    .fontWeight(.black)
-                    .foregroundColor(Color("TextColor"))
+                InstructionView(game: $game)
                 HStack {
                     Text("1")
                         .bold()
@@ -68,6 +62,18 @@ struct ContentView: View {
             }
         }
     }
+    struct InstructionView: View {
+        @Binding var game: Game
+        var body: some View {
+            VStack {
+                InstructionText(text: "🎯🎯🎯\nPut the bull's eye as close as you can")
+                    .padding(.horizontal, 30)
+                BigNumberText(text: String(game.target))
+            }
+        }
+    }
+    
+    
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
