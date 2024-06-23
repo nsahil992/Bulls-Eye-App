@@ -70,10 +70,6 @@ struct ContentView: View {
                         startPoint: .top, endPoint: .bottom)
                 }
             )
-            overlay (
-                RoundedRectangle(cornerSize: 21.0)
-                    .strokeBorder(Color.white, lineWidth: 2.0)
-            )
             .foregroundColor(.white)
             .cornerRadius(21.0)
             .bold()
