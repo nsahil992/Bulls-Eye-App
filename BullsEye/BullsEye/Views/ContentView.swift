@@ -15,8 +15,8 @@ struct ContentView: View {
     @State private var game = Game()
     var body: some View {
         ZStack {
-            Color("BackgroundColor")
-                .ignoresSafeArea()
+            BackgroundView(game: $game)
+            
             VStack {
                 InstructionView(game: $game)
                 SliderView(sliderValue: $sliderValue)
