@@ -14,7 +14,7 @@ struct BackgroundView: View {
         VStack {
             TopView(game: $game)
             Spacer()
-//            BottomView(game: $game)
+            BottomView(game: $game)
             
         }
         .padding()
@@ -43,8 +43,10 @@ struct NumberView: View {
     
     
     var body: some View {
-        Color.gray
-        frame(width: 56, height: 56)
+        VStack(spacing: 5) {
+            LabelText(text: title)
+            RoundRectTextView(text: text)
+        }
     }
 }
 
